@@ -1,21 +1,21 @@
 import { useState } from "react";
-import FeedList from "./feed-list";
+import FollowingList from "./following-list";
 
-function FeedContainer() {
+function FollowingContainer() {
   const [cnt, setCnt] = useState(1);
 
   const pages = [];
   for (let i = 0; i < cnt; i++) {
-    pages.push(<FeedList index={i} key={i} />);
+    pages.push(<FollowingList index={i} key={i} />);
   }
 
   return (
     <div>
       {pages}
-      <div className="flex justify-center">
+      <div className="flex justify-center w-full">
         <button
-          className="dark:bg-slate-900 bg-slate-400 p-2 rounded-lg"
           onClick={() => setCnt(cnt + 1)}
+          className="dark:bg-slate-900 bg-slate-400 p-2 rounded-lg"
         >
           Load More
         </button>
@@ -24,4 +24,4 @@ function FeedContainer() {
   );
 }
 
-export default FeedContainer;
+export default FollowingContainer;
